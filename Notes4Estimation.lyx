@@ -1,0 +1,1770 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Baseline Model
+\end_layout
+
+\begin_layout Subsection
+The Income Process
+\end_layout
+
+\begin_layout Standard
+For each education group and birth cohort, we write log-income net of predictabl
+e components
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Observable income characteristics including a second polynomial in age,
+ dummies for education, region, family size and marital status, the interaction
+ of family size and marital status and the interaction of the polynomial
+ in age and the education dummy.
+ Family income is given by total household income (NOTE: I removed the equivalen
+ce scale adjustment, because it did not matter for our results in the previous
+ version and to be consistent with the analysis of Magne's 
+\begin_inset Formula $\beta$
+\end_inset
+
+ in case we include it)
+\end_layout
+
+\end_inset
+
+of individual 
+\begin_inset Formula $i$
+\end_inset
+
+ at age 
+\begin_inset Formula $a\in[a_{\min},...,a_{\max}]$
+\end_inset
+
+ and as
+\begin_inset Formula 
+\begin{equation}
+y_{i,a}=\alpha_{i}+v_{i,a}+\tau_{i,a},\label{eq:income}
+\end{equation}
+
+\end_inset
+
+Individual-specific differences in levels are given by the mean-zero parameter
+ 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ with variance 
+\begin_inset Formula $var\left(\alpha_{i}\right)$
+\end_inset
+
+.
+ Transitory income 
+\begin_inset Formula $\tau_{i,a}$
+\end_inset
+
+ is assumed to follow a mean-reverting MA(1) process,
+\begin_inset Formula 
+\[
+\tau_{i,a}=\varepsilon_{i,a}+\theta\varepsilon_{i,a-1},
+\]
+
+\end_inset
+
+while the permanent component 
+\begin_inset Formula $v_{i,a}$
+\end_inset
+
+ is assumed to follow an AR(1) process, 
+\begin_inset Formula 
+\[
+v_{i,a}=\rho v_{i,a-1}+u_{i,a},
+\]
+
+\end_inset
+
+with persistence parameter 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ The shocks to income 
+\begin_inset Formula $\varepsilon_{i,a}$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{i,a}$
+\end_inset
+
+ are assumed to be independent of each other, serially uncorrelated, independent
+ of 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+, with zero-mean and variances 
+\begin_inset Formula $\omega_{a}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{a}^{2}$
+\end_inset
+
+ respectively.
+ The quasi-difference 
+\begin_inset Formula $\Delta^{\rho}y_{i,a}\equiv y_{i,a}-\rho y_{i,a-1}$
+\end_inset
+
+ can be written as
+\begin_inset Formula 
+\begin{equation}
+\Delta^{\rho}y_{i,a}=\alpha_{i}(1-\rho)+u_{i,a}+\Delta^{\rho}\varepsilon_{i,a}+\theta\Delta^{\rho}\varepsilon_{i,a-1},\quad a=a_{\min}+1,...,a_{\max},\label{eq:QD_scalar-1}
+\end{equation}
+
+\end_inset
+
+The autocovariance is given by 
+\begin_inset Formula 
+\begin{gather*}
+cov(\Delta^{\rho}y_{i,a},\Delta^{\rho}y_{i,a+s})=\left(1-\rho\right)^{2}var(\alpha_{i})\begin{cases}
+\begin{array}{c}
++\sigma_{a}^{2}+\omega_{a}^{2}+\left(\theta-\rho\right)^{2}\omega_{a-1}^{2}+\theta^{2}\rho^{2}\omega_{a-2}^{2}\\
++\left(\theta-\rho\right)\left(\omega_{a}^{2}-\theta\rho\omega_{a-1}^{2}\right)\\
+-\theta\rho\omega_{a}^{2}\\
++0
+\end{array} & \begin{array}{c}
+\mbox{if }s=0\\
+\mbox{if }s=1\\
+\mbox{if }s=2\\
+\mbox{if }s>2
+\end{array}\end{cases}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+1st order autocorrelation coefficients.
+\end_layout
+
+\begin_layout Standard
+The 1st order autocorrelation coefficient for the income process (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:income"
+
+\end_inset
+
+) at age 
+\begin_inset Formula $a$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\[
+\hat{\rho}_{1,a}=\frac{cov(y_{i,a},y_{i,a+1})}{\sqrt{var(y_{i,a})}\sqrt{var(y_{i,a+1})}}.
+\]
+
+\end_inset
+
+The autocovariance is given by 
+\begin_inset Formula 
+\begin{align*}
+cov(y_{i,a},y_{i,a+1}) & =cov(\alpha_{i}+v_{i,a}+\tau_{i,a},\alpha_{i}+\rho v_{i,a}+u_{i,a+1}+\tau_{i,a+1})\\
+ & =var(\alpha_{i})+\rho var(v_{i,a})+cov(\tau_{i,a},\tau_{i,a+1})
+\end{align*}
+
+\end_inset
+
+and note that with 
+\begin_inset Formula $var(y_{i,a})\backsimeq var(y_{i,a+1})$
+\end_inset
+
+ the first order autocorrelation coefficient becomes
+\begin_inset Formula 
+\[
+\hat{\rho}_{1,a}\simeq\frac{var(\alpha_{i})+\rho var(v_{i,a})+cov(\tau_{i,a},\tau_{i,a+1})}{var(\alpha_{i})+var(v_{i,a})+var(\tau_{i,a})}.
+\]
+
+\end_inset
+
+Since 
+\begin_inset Formula 
+\begin{align*}
+cov(\tau_{i,a},\tau_{i,a+1}) & =\theta var(\varepsilon_{i,a})\\
+var(\tau_{i,a}) & =var(\varepsilon_{i,a})+\theta^{2}var(\varepsilon_{i,a-1})\\
+var(v_{i,a}) & =\Sigma_{s=0}^{a}\rho^{2s}var(u_{i,a-s})
+\end{align*}
+
+\end_inset
+
+the first order autocorrelation coefficient can also be written as
+\begin_inset Formula 
+\[
+\hat{\rho}_{1,a}\simeq\frac{var(\alpha_{i})+\rho\Sigma_{s=0}^{a}\rho^{2s}var(u_{i,a-s})+\theta var(\varepsilon_{i,a})}{var(\alpha_{i})+\Sigma_{s=0}^{a}\rho^{2s}var(u_{i,a-s})+var(\varepsilon_{i,a})+\theta^{2}var(\varepsilon_{i,a-1})}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Estimation
+\end_layout
+
+\begin_layout Standard
+For each value of 
+\begin_inset Formula $\rho$
+\end_inset
+
+ on a grid we calculate the 
+\begin_inset Formula $A\times A$
+\end_inset
+
+ autocovariance matrix for the male member of the household
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+for each cohort and each education group in our baseline sample, where 
+\begin_inset Formula $A\equiv a_{\max}-a_{\min},$
+\end_inset
+
+ with 
+\begin_inset Formula $a_{\min}$
+\end_inset
+
+and 
+\begin_inset Formula $a_{\max}$
+\end_inset
+
+the minimum and maximum age of individuals in the sample.
+ For a given age 
+\begin_inset Formula $a$
+\end_inset
+
+ and lag 
+\begin_inset Formula $s,$
+\end_inset
+
+ we average 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $cov(\Delta^{\rho}y_{i,a},\Delta^{\rho}y_{i,a+s})$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ across all birth cohorts and thereby integrate out calendar time effects.
+ Let the resulting 
+\begin_inset Quotes eld
+\end_inset
+
+average
+\begin_inset Quotes erd
+\end_inset
+
+ autocovariance matrix be denoted by 
+\begin_inset Formula $\overline{C}$
+\end_inset
+
+ and define the stacked vector
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that 
+\begin_inset Formula $\hat{M}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\frac{\left(A+1\right)A}{2}\times1$
+\end_inset
+
+ vector.
+\end_layout
+
+\end_inset
+
+ of its unique elements by 
+\begin_inset Formula 
+\[
+\hat{M}=vech\left(\overline{C}\right).
+\]
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\Theta=\{\mathbf{\sigma}_{a}^{2},\mathbf{\omega}_{a}^{2},var\left(\alpha_{i}\right),\theta\}$
+\end_inset
+
+ denote the parameters
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{i,a}^{2}$
+\end_inset
+
+ is a 
+\begin_inset Formula $A\times1$
+\end_inset
+
+ vectors and 
+\begin_inset Formula $\mathbf{\omega}_{i,a}^{2}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\left(A+2\right)\times1$
+\end_inset
+
+ vector.
+\end_layout
+
+\end_inset
+
+ to be estimated for a given 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ The equally-weighted minimum distance estimator 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ is then the solution to 
+\begin_inset Formula 
+\[
+\hat{\Theta}=\mbox{arg}\min_{\Theta}\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right]'\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right]
+\]
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+where 
+\begin_inset Formula $M\left(\Theta;\rho\right)$
+\end_inset
+
+ are the corresponding stacked vector of theoretical moments given by
+\begin_inset Formula 
+\[
+M\left(\Theta;\rho\right)=\left[\begin{array}{c}
+\left(1-\rho\right)^{2}var(\alpha_{i})+\sigma_{26}^{2}+\omega_{26}^{2}+\left(\theta-\rho\right)^{2}\omega_{25}^{2}+\theta^{2}\rho^{2}\omega_{24}^{2}\\
+\vdots\\
+\left(1-\rho\right)^{2}var(\alpha_{i})+\sigma_{60}^{2}+\omega_{60}^{2}+\left(\theta-\rho\right)^{2}\omega_{59}^{2}+\theta^{2}\rho^{2}\omega_{58}^{2}\\
+\left(1-\rho\right)^{2}var(\alpha_{i})+\left(\theta-\rho\right)\left(\omega_{26}^{2}-\theta\rho\omega_{25}^{2}\right)\\
+\vdots\\
+\left(1-\rho\right)^{2}var(\alpha_{i})+\left(\theta-\rho\right)\left(\omega_{59}^{2}-\theta\rho\omega_{58}^{2}\right)\\
+\left(1-\rho\right)^{2}var(\alpha_{i})-\theta\rho\omega_{26}^{2}\\
+\vdots\\
+\left(1-\rho\right)^{2}var(\alpha_{i})-\theta\rho\omega_{58}^{2}\\
+\left(1-\rho\right)^{2}var(\alpha_{i})\\
+\vdots\\
+\left(1-\rho\right)^{2}var(\alpha_{i})
+\end{array}\right].
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Thus the objective function can be written as
+\begin_inset Formula 
+\[
+f\left(\Theta;\rho\right)=\frac{1}{2}\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right]'\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right].
+\]
+
+\end_inset
+
+To estimate the parameters we employ a Gauss-Newton algorithm.
+ The gradient of the objective function reads
+\begin_inset Formula 
+\[
+\nabla f\left(\Theta;\rho\right)=J\left(\Theta;\rho\right)'\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right],
+\]
+
+\end_inset
+
+where the Jacobian
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The Jacobian is of dimension 
+\begin_inset Formula $\frac{\left(A+1\right)A}{2}\times\left(A+\left(A+2\right)+2\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ can be represented as
+\begin_inset Formula 
+\[
+J\left(\Theta;\rho\right)=\left[\begin{array}{ccc}
+J_{11} & J_{12} & J_{13}\\
+J_{21} & J_{22} & J_{23}\\
+J_{31} & J_{32} & J_{33}\\
+J_{41} & J_{42} & J_{43}
+\end{array}\right]
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula 
+\begin{align*}
+\underset{A\times A}{J_{11}} & =\left[\begin{array}{ccc}
+1 &  & 0\\
+ & \ddots\\
+0 &  & 1
+\end{array}\right]\\
+\underset{A\times(A+2)}{J_{12}} & =\left[\begin{array}{ccccc}
+\theta^{2}\rho^{2} & \left(\theta-\rho\right)^{2} & 1 & 0 & 0\\
+0 & \ddots & \ddots & \ddots & 0\\
+0 & 0 & \theta^{2}\rho^{2} & \left(\theta-\rho\right)^{2} & 1
+\end{array}\right]\\
+\underset{A\times2}{J_{13}} & =\left[\begin{array}{cc}
+\left(1-\rho\right)^{2} & 2\left(\theta-\rho\right)\omega_{a_{\min}}^{2}+2\theta\rho^{2}\omega_{a_{\min}-1}^{2}\\
+\vdots & \vdots\\
+\left(1-\rho\right)^{2} & 2\left(\theta-\rho\right)\omega_{a_{\max}-1}^{2}+2\theta\rho^{2}\omega_{a_{\max}-2}^{2}
+\end{array}\right]\\
+\underset{(A-1)\times A}{J_{21}} & =\mathbf{0}\\
+\underset{(A-1)\times(A+2)}{J_{22}} & =\left[\begin{array}{cccccc}
+0 & -\left(\theta-\rho\right)\theta\rho & \left(\theta-\rho\right) & 0 & 0 & 0\\
+0 & \ddots & \ddots & \ddots & 0 & 0\\
+0 & 0 & 0 & -\left(\theta-\rho\right)\theta\rho & \left(\theta-\rho\right) & 0
+\end{array}\right]\\
+\underset{(A-1)\times2}{J_{23}} & =\left[\begin{array}{cc}
+\left(1-\rho\right)^{2} & \omega_{a_{\min}+1}^{2}+\left(\rho^{2}-2\theta\rho\right)\omega_{a_{\min}}^{2}\\
+\vdots & \vdots\\
+\left(1-\rho\right)^{2} & \omega_{a_{\max}-1}^{2}+\left(\rho^{2}-2\theta\rho\right)\omega_{a_{\max}-2}^{2}
+\end{array}\right]\\
+\underset{\left(A-2\right)\times A}{J_{31}} & =\mathbf{0}\\
+\underset{\left(A-2\right)\times\left(A+2\right)}{J_{32}} & =\left[\begin{array}{ccccccc}
+0 & 0 & -\theta\rho & 0 & 0 & 0 & 0\\
+0 & \ddots & \ddots & \ddots & 0 & \vdots & \vdots\\
+0 & 0 & 0 & 0 & -\theta\rho & 0 & 0
+\end{array}\right]\\
+\underset{(A-2)\times2}{J_{33}} & =\left[\begin{array}{cc}
+\left(1-\rho\right)^{2} & -\rho\omega_{a_{\min}+1}^{2}\\
+\vdots & \vdots\\
+\left(1-\rho\right)^{2} & -\rho\omega_{a_{\max}-2}^{2}
+\end{array}\right]\\
+\underset{\frac{(A-3)\left(A-2\right)}{2}\times A}{J_{41}} & =\mathbf{0}\\
+\underset{\frac{(A-3)\left(A-2\right)}{2}\times\left(A+2\right)}{J_{42}} & =\mathbf{0}\\
+\underset{\frac{(A-3)\left(A-2\right)}{2}\times2}{J_{43}} & =\left[\begin{array}{cc}
+\left(1-\rho\right)^{2} & 0\\
+\vdots & \vdots\\
+\left(1-\rho\right)^{2} & 0
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+The Hessian is approximated by
+\begin_inset Formula 
+\[
+\nabla^{2}f\left(\Theta;\rho\right)\approx J(\Theta;\rho)'J(\Theta;\rho)
+\]
+
+\end_inset
+
+Once we have solved for 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ for each value of 
+\begin_inset Formula $\rho$
+\end_inset
+
+ on our grid, we select the estimator 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ together with 
+\begin_inset Formula $\rho$
+\end_inset
+
+ that together minimise the objective function.
+\end_layout
+
+\begin_layout Paragraph
+Restrictions.
+\end_layout
+
+\begin_layout Standard
+As initial conditions we impose
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega_{a_{\min}-1}^{2}=\omega_{a_{\min}}^{2}=\omega_{a_{\min}+1}^{2}
+\]
+
+\end_inset
+
+and we further impose
+\begin_inset Formula 
+\[
+\sigma_{a_{\max}}^{2}=\sigma_{a_{\max}-1}^{2};\quad\omega_{a_{\max}}^{2}=\omega_{a_{\min}-1}^{2}
+\]
+
+\end_inset
+
+at the end of the working life.
+ In addition, variances are non-negative,
+\begin_inset Formula 
+\begin{alignat*}{1}
+\sigma_{a}^{2} & \geq0;\quad\omega_{a}^{2}\geq0\quad\forall a.\\
+\sigma_{\alpha}^{2} & \geq0
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Heterogenous Profiles
+\end_layout
+
+\begin_layout Paragraph
+The Income Process.
+\end_layout
+
+\begin_layout Standard
+For each education group and birth cohort, we write log-income net of predictabl
+e components
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Observable income characteristics including a second polynomial in age,
+ dummies for education, region, family size and marital status, the interaction
+ of family size and marital status and the interaction of the polynomial
+ in age and the education dummy.
+ Family income is given by total household income (NOTE: I removed the equivalen
+ce scale adjustment, because it did not matter for our results in the previous
+ version and to be consistent with the analysis of Magne's 
+\begin_inset Formula $\beta$
+\end_inset
+
+ in case we include it)
+\end_layout
+
+\end_inset
+
+of individual 
+\begin_inset Formula $i$
+\end_inset
+
+ at age 
+\begin_inset Formula $a\in[a_{\min},...,a_{\max}]$
+\end_inset
+
+ and as
+\begin_inset Formula 
+\[
+y_{i,a}=\alpha_{i}+\beta_{i}a+v_{i,a}+\tau_{i,a},
+\]
+
+\end_inset
+
+Individual-specific differences in levels and growth rates are captured
+ by the parameters 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ drawn from a bivariate mean-zero distribution, 
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\alpha_{i}\\
+\beta_{i}
+\end{array}\right)\sim\left(\mathbf{0},\mathbf{\Sigma}\right),
+\]
+
+\end_inset
+
+with covariance matrix 
+\begin_inset Formula $\mathbf{\Sigma}$
+\end_inset
+
+.
+ Transitory income 
+\begin_inset Formula $\tau_{i,a}$
+\end_inset
+
+ is assumed to follow a mean-reverting MA(1) process,
+\begin_inset Formula 
+\[
+\tau_{i,a}=\varepsilon_{i,a}+\theta\varepsilon_{i,a-1},\quad\varepsilon_{i,a},
+\]
+
+\end_inset
+
+while the permanent component 
+\begin_inset Formula $v_{i,a}$
+\end_inset
+
+ is assumed to follow an AR(1) process, 
+\begin_inset Formula 
+\[
+v_{i,a}=\rho v_{i,a-1}+u_{i,a},
+\]
+
+\end_inset
+
+with persistence parameter 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ The shocks to income 
+\begin_inset Formula $\varepsilon_{i,a}$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{i,a}$
+\end_inset
+
+ are assumed to be independent of each other, serially uncorrelated, independent
+ of 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+, with zero-mean and variances 
+\begin_inset Formula $\omega_{a}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{a}^{2}$
+\end_inset
+
+ respectively.
+ The quasi-difference 
+\begin_inset Formula $\Delta^{\rho}y_{i,a}\equiv y_{i,a}-\rho y_{i,a-1}$
+\end_inset
+
+ can be written as
+\begin_inset Formula 
+\begin{equation}
+\Delta^{\rho}y_{i,a}=\alpha_{i}(1-\rho)+\beta_{i}\xi_{a}+u_{i,a}+\Delta^{\rho}\varepsilon_{i,a}+\theta\Delta^{\rho}\varepsilon_{i,a-1},\quad a=a_{\min}+1,...,a_{\max},\label{eq:QD_scalar}
+\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $\xi_{a}\equiv\left(1-\rho\right)a+\rho$
+\end_inset
+
+ and its autocovariance is given by 
+\begin_inset Formula 
+\begin{gather*}
+\mbox{cov}\left(\Delta^{\rho}y_{i,a},\Delta^{\rho}y_{i,a+s}\right)=\left[\left(1-\rho\right),\xi_{a}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{a+s}\right]'\\
+\begin{cases}
+\begin{array}{c}
++\sigma_{a}^{2}+\omega_{a}^{2}+\left(\theta-\rho\right)^{2}\omega_{a-1}^{2}+\theta^{2}\rho^{2}\omega_{a-2}^{2}\\
++\left[\theta-\rho\right]\left[\omega_{a}^{2}-\theta\rho\omega_{a-1}^{2}\right]\\
+-\theta\rho\omega_{a}^{2}\\
+0
+\end{array} & \begin{array}{c}
+\mbox{if }s=0\\
+\mbox{if }s=1\\
+\mbox{if }s=2\\
+\mbox{if }s>2
+\end{array}\end{cases}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Estimation.
+\end_layout
+
+\begin_layout Standard
+For each value of 
+\begin_inset Formula $\rho$
+\end_inset
+
+ on a grid we calculate the 
+\begin_inset Formula $A\times A$
+\end_inset
+
+ autocovariance matrix for the male member of the household
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+for each cohort and each education group in our baseline sample, where 
+\begin_inset Formula $A\equiv a_{\max}-a_{\min},$
+\end_inset
+
+ with 
+\begin_inset Formula $a_{\min}$
+\end_inset
+
+and 
+\begin_inset Formula $a_{\max}$
+\end_inset
+
+the minimum and maximum age of individuals in the sample.
+ For a given age 
+\begin_inset Formula $a$
+\end_inset
+
+ and lag 
+\begin_inset Formula $s,$
+\end_inset
+
+ we average 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $cov(\Delta^{\rho}y_{i,a},\Delta^{\rho}y_{i,a+s})$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ across all birth cohorts.
+ Let the resulting 
+\begin_inset Quotes eld
+\end_inset
+
+average
+\begin_inset Quotes erd
+\end_inset
+
+ autocovariance matrix be denoted by 
+\begin_inset Formula $\overline{C}$
+\end_inset
+
+ and define the stacked vector
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that 
+\begin_inset Formula $\hat{M}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\frac{\left(A+1\right)A}{2}\times1$
+\end_inset
+
+ vector.
+\end_layout
+
+\end_inset
+
+ of its unique elements by 
+\begin_inset Formula 
+\[
+\hat{M}=vech\left(\overline{C}\right).
+\]
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\Theta=\{\mathbf{\sigma}_{a}^{2},\mathbf{\omega}_{a}^{2},var(\alpha_{i}),var(\beta_{i}),\rho_{\alpha\beta},\theta\}$
+\end_inset
+
+ denote the parameters
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{i,a}^{2}$
+\end_inset
+
+ is a 
+\begin_inset Formula $A\times1$
+\end_inset
+
+ vectors and 
+\begin_inset Formula $\mathbf{\omega}_{i,a}^{2}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\left(A+2\right)\times1$
+\end_inset
+
+ vector.
+\end_layout
+
+\end_inset
+
+ to be estimated for a given 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ The equally-weighted minimum distance estimator 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ is then the solution to 
+\begin_inset Formula 
+\[
+\hat{\Theta}=\mbox{arg}\min_{\Theta}\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right]'\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right]
+\]
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+where 
+\begin_inset Formula $M\left(\Theta;\rho\right)$
+\end_inset
+
+ are the corresponding stacked vector of theoretical moments given by
+\begin_inset Formula 
+\[
+M\left(\Theta;\rho\right)=\left[\begin{array}{c}
+\left[\left(1-\rho\right),\xi_{26}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{26}\right]'+\sigma_{26}^{2}+\omega_{26}^{2}+\left(\theta-\rho\right)^{2}\omega_{25}^{2}+\theta^{2}\rho^{2}\omega_{24}^{2}\\
+\vdots\\
+\left[\left(1-\rho\right),\xi_{60}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{60}\right]'+\sigma_{60}^{2}+\omega_{60}^{2}+\left(\theta-\rho\right)^{2}\omega_{59}^{2}+\theta^{2}\rho^{2}\omega_{58}^{2}\\
+\left[\left(1-\rho\right),\xi_{26}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{27}\right]'+\left(\theta-\rho\right)\left(\omega_{26}^{2}-\theta\rho\omega_{25}^{2}\right)\\
+\vdots\\
+\left[\left(1-\rho\right),\xi_{59}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{60}\right]'+\left(\theta-\rho\right)\left(\omega_{59}^{2}-\theta\rho\omega_{58}^{2}\right)\\
+\left[\left(1-\rho\right),\xi_{26}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{28}\right]'-\theta\rho\omega_{26}^{2}\\
+\vdots\\
+\left[\left(1-\rho\right),\xi_{58}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{60}\right]'-\theta\rho\omega_{58}^{2}\\
+\left[\left(1-\rho\right),\xi_{26}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{29}\right]'\\
+\left[\left(1-\rho\right),\xi_{27}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{30}\right]'\\
+\vdots\\
+\left[\left(1-\rho\right),\xi_{26}\right]\mathbf{\Sigma}\left[\left(1-\rho\right),\xi_{60}\right]'
+\end{array}\right].
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Thus the objective function can be written as
+\begin_inset Formula 
+\[
+f\left(\Theta;\rho\right)=\frac{1}{2}\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right]'\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right].
+\]
+
+\end_inset
+
+To estimate the parameters we employ a Gauss-Newton algorithm.
+ The gradient of the objective function reads
+\begin_inset Formula 
+\[
+\nabla f\left(\Theta;\rho\right)=J\left(\Theta;\rho\right)'\left[\begin{array}{c}
+M\left(\Theta;\rho\right)-\begin{array}{c}
+\hat{M}\end{array}\end{array}\right],
+\]
+
+\end_inset
+
+where the Jacobian
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The Jacobian is of dimension 
+\begin_inset Formula $\frac{\left(A+1\right)A}{2}\times\left(A+\left(A+2\right)+2\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ can be represented as
+\begin_inset Formula 
+\[
+J\left(\Theta;\rho\right)=\left[\begin{array}{cccc}
+J_{11} & J_{12} & J_{13} & J_{14}\\
+J_{21} & J_{22} & J_{23} & J_{24}\\
+J_{31} & J_{32} & J_{33} & J_{34}\\
+J_{41} & J_{42} & J_{43} & J_{44}
+\end{array}\right]
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula 
+\begin{align*}
+\underset{A\times A}{J_{11}} & =\left[\begin{array}{ccc}
+1 &  & 0\\
+ & \ddots\\
+0 &  & 1
+\end{array}\right]\\
+\underset{A\times(A+2)}{J_{12}} & =\left[\begin{array}{ccccc}
+\theta^{2}\rho^{2} & \left(\theta-\rho\right)^{2} & 1 & 0 & 0\\
+0 & \ddots & \ddots & \ddots & 0\\
+0 & 0 & \theta^{2}\rho^{2} & \left(\theta-\rho\right)^{2} & 1
+\end{array}\right]\\
+\underset{A\times3}{J_{13}} & =\left[\begin{array}{ccc}
+diag_{0}\left(\mathbf{\Sigma}_{1}\right) & diag_{0}\left(\mathbf{\Sigma}_{2}\right) & diag_{0}\left(\mathbf{\Sigma}_{3}\right)\end{array}\right]\\
+\underset{A\times1}{J_{14}} & =\left[\begin{array}{c}
+2\left(\theta-\rho\right)\omega_{a_{\min}}^{2}+2\theta\rho^{2}\omega_{a_{\min}-1}^{2}\\
+\vdots\\
+2\left(\theta-\rho\right)\omega_{a_{\max}-1}^{2}+2\theta\rho^{2}\omega_{a_{\max}-2}^{2}
+\end{array}\right]\\
+\underset{(A-1)\times A}{J_{21}} & =\mathbf{0}\\
+\underset{(A-1)\times(A+2)}{J_{22}} & =\left[\begin{array}{cccccc}
+0 & -\left(\theta-\rho\right)\theta\rho & \left(\theta-\rho\right) & 0 & 0 & 0\\
+0 & \ddots & \ddots & \ddots & 0 & 0\\
+0 & 0 & 0 & -\left(\theta-\rho\right)\theta\rho & \left(\theta-\rho\right) & 0
+\end{array}\right]\\
+\underset{\left(A-1\right)\times3}{J_{23}} & =\left[\begin{array}{ccc}
+diag_{1}\left(\mathbf{\Sigma}_{1}\right) & diag_{1}\left(\mathbf{\Sigma}_{2}\right) & diag_{1}\left(\mathbf{\Sigma}_{3}\right)\end{array}\right]\\
+\underset{(A-1)\times2}{J_{24}} & =\left[\begin{array}{c}
+\omega_{a_{\min}+1}^{2}+\left(\rho^{2}-2\theta\rho\right)\omega_{a_{\min}}^{2}\\
+\vdots\\
+\omega_{a_{\max}-1}^{2}+\left(\rho^{2}-2\theta\rho\right)\omega_{a_{\max}-2}^{2}
+\end{array}\right]\\
+\underset{\left(A-2\right)\times A}{J_{31}} & =\mathbf{0}\\
+\underset{\left(A-2\right)\times\left(A+2\right)}{J_{32}} & =\left[\begin{array}{ccccccc}
+0 & 0 & -\theta\rho & 0 & 0 & 0 & 0\\
+0 & \ddots & \ddots & \ddots & 0 & \vdots & \vdots\\
+0 & 0 & 0 & 0 & -\theta\rho & 0 & 0
+\end{array}\right]\\
+\underset{(A-2)\times3}{J_{33}} & =\left[\begin{array}{ccc}
+diag_{2}\left(\mathbf{\Sigma}_{1}\right) & diag_{2}\left(\mathbf{\Sigma}_{2}\right) & diag_{2}\left(\mathbf{\Sigma}_{3}\right)\end{array}\right]\\
+\underset{(A-2)\times2}{J_{34}} & =\left[\begin{array}{c}
+-\rho\omega_{a_{\min}+1}^{2}\\
+\vdots\\
+-\rho\omega_{a_{\max}-2}^{2}
+\end{array}\right]\\
+\underset{\frac{(A-3)\left(A-2\right)}{2}\times A}{J_{41}} & =\mathbf{0}\\
+\underset{\frac{(A-3)\left(A-2\right)}{2}\times\left(A+2\right)}{J_{42}} & =\mathbf{0}\\
+\underset{A\times3}{J_{43}} & =vech\left[\begin{array}{ccc}
+diag_{3+}\left(\mathbf{\Sigma}_{1}\right) & diag_{3+}\left(\mathbf{\Sigma}_{2}\right) & diag_{3+}\left(\mathbf{\Sigma}_{3}\right)\end{array}\right]\\
+\underset{\frac{(A-3)\left(A-2\right)}{2}\times2}{J_{44}} & =\mathbf{0}
+\end{align*}
+
+\end_inset
+
+with
+\begin_inset Formula 
+\begin{align*}
+\Sigma_{1} & =\left[\left(1-\rho\right),\xi_{a}\right]\left[\begin{array}{cc}
+1 & \frac{1}{2}\rho_{\alpha\beta}\sqrt{\frac{var(\beta_{i})}{var(\alpha_{i})}}\\
+\frac{1}{2}\rho_{\alpha\beta}\sqrt{\frac{var(\beta_{i})}{var(\alpha_{i})}} & 0
+\end{array}\right]\left[\left(1-\rho\right),\xi_{a}\right]'\\
+\Sigma_{2} & =\left[\left(1-\rho\right),\xi_{a}\right]\left[\begin{array}{cc}
+0 & \frac{1}{2}\rho_{\alpha\beta}\sqrt{\frac{var(\alpha_{i})}{var(\beta_{i})}}\\
+\frac{1}{2}\rho_{\alpha\beta}\sqrt{\frac{var(\alpha_{i})}{var(\beta_{i})}} & 1
+\end{array}\right]\left[\left(1-\rho\right),\xi_{a}\right]'\\
+\Sigma_{3} & =\left[\left(1-\rho\right),\xi_{a}\right]\left[\begin{array}{cc}
+0 & \sqrt{var(\alpha_{i})var(\beta_{i})}\\
+\sqrt{var(\alpha_{i})var(\beta_{i})} & 0
+\end{array}\right]\left[\left(1-\rho\right),\xi_{a}\right]'
+\end{align*}
+
+\end_inset
+
+and 
+\begin_inset Formula $diag_{k}(x)$
+\end_inset
+
+ represents the diagonal 
+\begin_inset Formula $k$
+\end_inset
+
+ of matrix 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $k=0$
+\end_inset
+
+ is the main diagonal.
+ The Hessian is approximated by
+\begin_inset Formula 
+\[
+\nabla^{2}f\left(\Theta;\rho\right)\approx J(\Theta;\rho)'J(\Theta;\rho)
+\]
+
+\end_inset
+
+Once we have solved for 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ for each value of 
+\begin_inset Formula $\rho$
+\end_inset
+
+ on our grid, we select the estimator 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ together with 
+\begin_inset Formula $\rho$
+\end_inset
+
+ that together minimise the objective function.
+\end_layout
+
+\begin_layout Paragraph
+Restrictions.
+\end_layout
+
+\begin_layout Standard
+As initial conditions we impose
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega_{a_{\min}-1}^{2}=\omega_{a_{\min}}^{2}=\omega_{a_{\min}+1}^{2}
+\]
+
+\end_inset
+
+and we further impose
+\begin_inset Formula 
+\[
+\sigma_{a_{\max}}^{2}=\sigma_{a_{\max}-1}^{2};\quad\omega_{a_{\max}}^{2}=\omega_{a_{\min}-1}^{2}
+\]
+
+\end_inset
+
+at the end of the working life.
+ In addition, variances are non-negative,
+\begin_inset Formula 
+\begin{alignat*}{1}
+\sigma_{a}^{2} & \geq0;\quad\omega_{a}^{2}\geq0\quad\forall a.\\
+-1 & \leq\rho_{\alpha\beta}\leq1\\
+var(\alpha_{i}) & \geq0\\
+var(\beta_{i}) & \geq0
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dual Earner Families
+\end_layout
+
+\begin_layout Subsection
+The Income Process
+\end_layout
+
+\begin_layout Standard
+For each education group and birth cohort, we write log-income net of predictabl
+e components
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Observable income characteristics including a second polynomial in age,
+ dummies for education, region, family size and marital status, the interaction
+ of family size and marital status and the interaction of the polynomial
+ in age and the education dummy.
+ Family income is given by total household income (NOTE: I removed the equivalen
+ce scale adjustment, because it did not matter for our results in the previous
+ version and to be consistent with the analysis of Magne's 
+\begin_inset Formula $\beta$
+\end_inset
+
+ in case we include it)
+\end_layout
+
+\end_inset
+
+of individual 
+\begin_inset Formula $i$
+\end_inset
+
+ of household 
+\begin_inset Formula $j$
+\end_inset
+
+ at age 
+\begin_inset Formula $a\in[a_{\min},...,a_{\max}]$
+\end_inset
+
+ as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{i,j,a}=\alpha_{i,j}+\tau_{i,j,a}+v_{i,j,a}
+\]
+
+\end_inset
+
+Transitory income 
+\begin_inset Formula $\tau_{i,j,a}$
+\end_inset
+
+ is assumed to follow a mean-reverting MA(1) process,
+\begin_inset Formula 
+\[
+\tau_{i,j,a}=\varepsilon_{i,j,a}+\theta_{i}\varepsilon_{i,j,a-1},\quad\varepsilon_{i,j,a},
+\]
+
+\end_inset
+
+while the permanent component 
+\begin_inset Formula $v_{i,j,a}$
+\end_inset
+
+ is assumed to follow an AR(1) process, 
+\begin_inset Formula 
+\[
+v_{i,j,a}=\rho_{i}v_{i,j,a-1}+u_{i,j,a}.
+\]
+
+\end_inset
+
+with persistence parameter 
+\begin_inset Formula $\rho_{i}$
+\end_inset
+
+.
+ Shocks are assumed to be serially uncorrelated, but potentially correlated
+ within household 
+\begin_inset Formula $j$
+\end_inset
+
+,
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\mathbb{E}\left(u_{i,j,a}u_{i',j',a+s}\right)=\begin{cases}
+\sigma_{i,a}^{2} & \mbox{if }i=i'\mbox{}\mbox{, }j=j'\mbox{}\mbox{and }s=0\\
+\sigma_{i,i',a} & \mbox{if }i\neq i'\mbox{, }j=j'\mbox{}\mbox{and }s=0\\
+0 & otherwise
+\end{cases}\quad\mathbb{E}\left(\varepsilon_{i,j,a}\varepsilon_{i',j,a+s}\right)=\begin{cases}
+\omega_{i,a}^{2} & \mbox{if }i=i'\mbox{, }j=j'\mbox{}\mbox{and }s=0\\
+\omega_{i,i',a} & \mbox{if }i\neq i'\mbox{, }j=j'\mbox{}\mbox{and }s=0\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\size default
+and 
+\begin_inset Formula 
+\[
+\mathbb{E}\left(\alpha_{i,j},\alpha_{i',j'}\right)=\begin{cases}
+var\left(\alpha_{i}\right) & \mbox{if }i=i'\mbox{, }j=j'\\
+cov\left(\alpha_{i},\alpha_{i'}\right) & \mbox{if }i\neq i'\mbox{, }j=j'\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+Quasi-differencing yields
+\begin_inset Formula 
+\begin{align*}
+\Delta^{\rho_{i}}y_{i,j,a} & =\alpha_{i,j}(1-\rho_{i})+u_{i,j,a}+\Delta^{\rho_{i}}\varepsilon_{i,j,a}+\theta_{i}\Delta^{\rho_{i}}\varepsilon_{i,j,a-1}\\
+ & =\alpha_{i,j}(1-\rho_{i})+u_{i,j,a}+\varepsilon_{i,j,a}+\left[\theta_{i}-\rho_{i}\right]\varepsilon_{i,j,a-1}-\theta_{i}\rho_{i}\varepsilon_{i,j,a-2}.
+\end{align*}
+
+\end_inset
+
+The auto-covariance 
+\begin_inset Formula $cov\left(\Delta^{\rho_{i}}y_{i,j,a},\Delta^{\rho_{i'}}y_{i,j,a+s}\right)$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{gather*}
+cov(\Delta^{\rho_{i}}y_{i,j,a},\Delta^{\rho_{i}}y_{i,j,a+s})=\\
+\left(1-\rho_{i}\right)^{2}var\left(\alpha_{i}\right)\begin{cases}
++\sigma_{i,a}^{2}+\omega_{i,a}^{2}+\left(\theta_{i}-\rho_{i}\right)^{2}\omega_{i,a-1}^{2}+\theta_{i}^{2}\rho_{i}^{2}\omega_{i,a-2}^{2} & \mbox{if }s=0\\
++\left[\theta_{i}-\rho_{i}\right]\left[\omega_{i,a}^{2}-\theta_{i}\rho_{i}\omega_{i,a-1}^{2}\right] & \mbox{if }s=1\\
+-\theta_{i}\rho_{i}\omega_{i,a}^{2} & \mbox{if }s=2\\
++0 & \mbox{if }s>2
+\end{cases}
+\end{gather*}
+
+\end_inset
+
+The cross-covariance 
+\begin_inset Formula $cov\left(\Delta^{\rho_{i}}y_{i,j,a},\Delta^{\rho_{i'}}y_{i',j',a+s}\right)$
+\end_inset
+
+ for 
+\begin_inset Formula $j=j'$
+\end_inset
+
+ and 
+\begin_inset Formula $i\neq i'$
+\end_inset
+
+ is given by
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Formula 
+\begin{gather*}
+cov(\Delta^{\rho_{i}}y_{i,j,a},\Delta^{\rho_{i'}}y_{i',j,a+s})=\\
+\left(1-\rho_{i}\right)\left(1-\rho_{i'}\right)cov\left(\alpha_{i},\alpha_{i'}\right)\begin{cases}
++\sigma_{i,i',a}+\omega_{i,i',a}+\left(\theta_{i}-\rho_{i}\right)\left(\theta_{i'}-\rho_{i'}\right)\omega_{i,i',a-1}+\rho_{i}\theta_{i}\rho_{i'}\theta_{i'}\omega_{i,i',a-2} & \mbox{if }s=0\\
++\left[\theta_{i'}-\rho_{i'}\right]\omega_{i,i',a}-\theta_{i'}\rho_{i'}\left[\theta_{i}-\rho_{i}\right]\omega_{i,i',a-1} & \mbox{if }s=1\\
+-\theta_{i'}\rho_{i'}\omega_{i,i',a} & \mbox{if }s=2\\
++0 & \mbox{if }s>2
+\end{cases}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estimation
+\end_layout
+
+\begin_layout Standard
+On a 2-dimensional grid 
+\begin_inset Formula $\rho_{i}\times\rho_{i'}$
+\end_inset
+
+ we calculate the
+\end_layout
+
+\begin_layout Itemize
+the 
+\begin_inset Formula $A\times A$
+\end_inset
+
+ autocovariance matrix for the male member of the household
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $cov(\Delta^{\rho_{i}}y_{i,j,a},\Delta^{\rho_{i}}y_{i,j,a+s})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+the 
+\begin_inset Formula $A\times A$
+\end_inset
+
+ autocovariance matrix of the spouse 
+\begin_inset Formula $cov(\Delta^{\rho_{i'}}y_{i',j,a},\Delta^{\rho_{i'}}y_{i',j,a+s})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the 
+\begin_inset Formula $A\times A$
+\end_inset
+
+ cross-covariance matrix 
+\begin_inset Formula $cov(\Delta^{\rho_{i}}y_{i,j,a},\Delta^{\rho_{i'}}y_{i',j,a+s})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for each cohort and each education group in our sample of dual earner families.
+ For a given age 
+\begin_inset Formula $a$
+\end_inset
+
+ and lag 
+\begin_inset Formula $s,$
+\end_inset
+
+ we average 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+these matrices
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ across all birth cohorts.
+ Let the resulting 
+\begin_inset Quotes eld
+\end_inset
+
+average
+\begin_inset Quotes erd
+\end_inset
+
+ matrices be denoted by 
+\begin_inset Formula $\overline{C}_{i},\overline{C}_{i'}$
+\end_inset
+
+ and 
+\begin_inset Formula $\overline{C}_{i,i'}$
+\end_inset
+
+ and define the stacked vectors of their unique elements by 
+\begin_inset Formula 
+\[
+\hat{M}_{i}=vech\left(\overline{C}_{i}\right)\quad\hat{M}_{i'}=vech\left(\overline{C}_{i'}\right)\quad\hat{M}_{i,i'}=vech\left(\overline{C}_{i,i'}\right)
+\]
+
+\end_inset
+
+where the first two vectors are of length
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $A\equiv a_{\max}-a_{\min},$
+\end_inset
+
+ with 
+\begin_inset Formula $a_{\min}$
+\end_inset
+
+and 
+\begin_inset Formula $a_{\max}$
+\end_inset
+
+the minimum and maximum age of individuals in our sample
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\frac{\left(A-1\right)A}{2},$
+\end_inset
+
+ while the latter vector is of length 
+\begin_inset Formula $A^{2}$
+\end_inset
+
+ because the cross-covariance matrix is not symetric.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\Theta=\{\mathbf{\sigma}_{i,a}^{2}\sigma_{i',a}^{2},\sigma_{i,i',a},\mathbf{\omega}_{i,a}^{2},\omega_{i',a}^{2},\omega_{i,i',a},\theta_{i},\theta_{i'},var\left(\alpha_{i}\right),var\left(\alpha_{i'}\right),cov\left(\alpha_{i},\alpha_{i'}\right)\}$
+\end_inset
+
+ denote the parameters
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{i,a}^{2},\sigma_{i',a}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{i,i',a}$
+\end_inset
+
+ are 
+\begin_inset Formula $A\times1$
+\end_inset
+
+ vectors and 
+\begin_inset Formula $\mathbf{\omega}_{i,a}^{2},\omega_{i',a}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\omega_{i,i',a}$
+\end_inset
+
+ are 
+\begin_inset Formula $\left(A+2\right)\times1$
+\end_inset
+
+ vectors.
+\end_layout
+
+\end_inset
+
+ to be estimated for a given 
+\begin_inset Formula $\rho_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho_{i'}$
+\end_inset
+
+.
+ The equally-weighted minimum distance estimator 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ is then the solution to 
+\begin_inset Formula 
+\[
+\hat{\Theta}=\mbox{arg}\min_{\Theta}\left[\begin{array}{c}
+\mathcal{M}\left(\Theta;\rho_{i},\rho_{i'}\right)-\begin{array}{c}
+\hat{\mathcal{M}}\end{array}\end{array}\right]'\left[\begin{array}{c}
+\mathcal{M}\left(\Theta;\rho_{i},\rho_{i'}\right)-\begin{array}{c}
+\hat{\mathcal{M}}\end{array}\end{array}\right]
+\]
+
+\end_inset
+
+
+\size footnotesize
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+where 
+\begin_inset Formula $\mathcal{\hat{M}}\equiv[\hat{M}_{i};\hat{M};\hat{M}_{i,i'}]$
+\end_inset
+
+ is the 
+\begin_inset Formula $\left(\left(A-1\right)A+A^{2}\right)\times1$
+\end_inset
+
+ vector of empirical moments and 
+\begin_inset Formula $\mathcal{M}\left(\Theta;\rho_{i},\rho_{i'}\right)$
+\end_inset
+
+ denotes the corresponding stacked vectors of theoretical moments.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+To estimate the parameters we rely on finite difference approximations for
+ the gradient and a dense quasi-Newton BFGS Hessian.
+ Once we have solved for 
+\begin_inset Formula $\hat{\Theta}$
+\end_inset
+
+ for each point on our grid we select the estimates and 
+\begin_inset Formula $\rho_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho_{i'}$
+\end_inset
+
+ that yield the minimum of the objective function.
+\end_layout
+
+\begin_layout Paragraph
+Restrictions.
+\end_layout
+
+\begin_layout Standard
+As initial conditions we impose
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\omega_{i,a_{\min}-1}^{2} & =\omega_{i,a_{\min}}^{2}=\omega_{i,a_{\min}+1}^{2}\\
+\omega_{i',a_{\min}-1}^{2} & =\omega_{i',a_{\min}}^{2}=\omega_{i',a_{\min}+1}^{2}\\
+\omega_{i,i',a_{\min}-1} & =\omega_{i,i',a_{\min}}=\omega_{i,i',a_{\min}+1}
+\end{align*}
+
+\end_inset
+
+and we further impose
+\begin_inset Formula 
+\begin{align*}
+\sigma_{i,a_{\max}}^{2} & =\sigma_{i,a_{\max}-1}^{2};\quad\omega_{i,a_{\max}}^{2}=\omega_{i,a_{\min}-1}^{2}\\
+\sigma_{i',a_{\max}}^{2} & =\sigma_{i',a_{\max}-1}^{2};\quad\omega_{i',a_{\max}}^{2}=\omega_{i',a_{\min}-1}^{2}\\
+\sigma_{i,i',a_{\max}} & =\sigma_{i,i',a_{\max}-1};\quad\omega_{i,i',a_{\max}}=\omega_{i,i',a_{\min}-1}
+\end{align*}
+
+\end_inset
+
+at the end of the working life.
+ In addition, variances are non-negative,
+\begin_inset Formula 
+\begin{alignat*}{1}
+\sigma_{j,a}^{2} & \geq0;\quad\omega_{j,a}^{2}\geq0\quad\forall a,j=i,i'.\\
+var(\alpha_{i}) & \geq0\quad var(\alpha_{i'})\geq0
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,90 @@
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = pooled
+rhoMale = 0.87
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = pooled
+rhoMale = 0.94
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = pooled
+rhoMale = 0.95
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = pooled
+rhoMale = 0.96
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = pooled
+rhoMale = 0.97
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = pooled
+rhoMale = 0.98
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================

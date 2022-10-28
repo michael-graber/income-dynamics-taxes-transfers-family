@@ -1,0 +1,110 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/data/uctpmgr/BitBucket/BlundellGraberMogstad/output/stata/figures/SampleSize/N_individuals.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 8 Jan 2014, 01:35:31
+{txt}
+{com}. log off
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/data/uctpmgr/BitBucket/BlundellGraberMogstad/output/stata/figures/SampleSize/N_individuals.smcl
+  {txt}log type:  {res}smcl
+ {txt}paused on:  {res} 8 Jan 2014, 01:35:31
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/data/uctpmgr/BitBucket/BlundellGraberMogstad/output/stata/figures/SampleSize/N_individuals.smcl
+  {txt}log type:  {res}smcl
+{txt}resumed on:  {res} 8 Jan 2014, 01:35:31
+{txt}
+{com}. * The total number of individuals is:
+. bysort sample: list Pooled
+
+{txt}{hline}
+-> sample = sample_baseline
+
+     {c TLC}{hline 8}{c TRC}
+     {c |} {res}Pooled {txt}{c |}
+     {c LT}{hline 8}{c RT}
+  1. {c |} {res}934704 {txt}{c |}
+     {c BLC}{hline 8}{c BRC}
+
+
+{com}. 
+. * The Percentage of Low-Skilled Individuals is 
+. bysort sample: list LowSkill_perc
+
+{txt}{hline}
+-> sample = sample_baseline
+
+     {c TLC}{hline 10}{c TRC}
+     {c |} {res}LowSki~c {txt}{c |}
+     {c LT}{hline 10}{c RT}
+  1. {c |} {res}.3202244 {txt}{c |}
+     {c BLC}{hline 10}{c BRC}
+
+
+{com}. 
+. * The Percentage of Medium-Skilled Individuals is 
+. bysort sample: list MediumSkill_perc
+
+{txt}{hline}
+-> sample = sample_baseline
+
+     {c TLC}{hline 10}{c TRC}
+     {c |} {res}Medium~c {txt}{c |}
+     {c LT}{hline 10}{c RT}
+  1. {c |} {res}.4815845 {txt}{c |}
+     {c BLC}{hline 10}{c BRC}
+
+
+{com}. 
+. * The Percentage of High-Skilled Individuals is 
+. bysort sample: list HighSkill_perc
+
+{txt}{hline}
+-> sample = sample_baseline
+
+     {c TLC}{hline 10}{c TRC}
+     {c |} {res}HighSk~c {txt}{c |}
+     {c LT}{hline 10}{c RT}
+  1. {c |} {res}.1981911 {txt}{c |}
+     {c BLC}{hline 10}{c BRC}
+
+
+{com}. 
+. log off
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/data/uctpmgr/BitBucket/BlundellGraberMogstad/output/stata/figures/SampleSize/N_individuals.smcl
+  {txt}log type:  {res}smcl
+ {txt}paused on:  {res} 8 Jan 2014, 01:35:31
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/data/uctpmgr/BitBucket/BlundellGraberMogstad/output/stata/figures/SampleSize/N_individuals.smcl
+  {txt}log type:  {res}smcl
+{txt}resumed on:  {res} 8 Jan 2014, 01:35:31
+{txt}
+{com}. * Average Number of Individuals per Cohort: (mean)
+. bysort sample: summarize Individuals
+
+{txt}{hline}
+-> sample = sample_baseline
+
+    Variable {c |}       Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 56}
+{space 1}Individuals {c |}{res}        40     23367.6    5160.842      16099      31604
+
+{txt}
+{com}. log off
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/data/uctpmgr/BitBucket/BlundellGraberMogstad/output/stata/figures/SampleSize/N_individuals.smcl
+  {txt}log type:  {res}smcl
+ {txt}paused on:  {res} 8 Jan 2014, 01:35:31
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

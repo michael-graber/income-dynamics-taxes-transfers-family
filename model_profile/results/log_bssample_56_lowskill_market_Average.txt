@@ -1,0 +1,15 @@
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = lowskill
+rhoMale = 0.98
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================

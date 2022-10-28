@@ -1,0 +1,60 @@
+# KNITRO 7.0.0 Options file
+# http://ziena.com/documentation.html
+
+# Which algorithm to use.
+#   auto   = 0 = let KNITRO choose the algorithm
+#   direct = 1 = use Interior (barrier) Direct algorithm
+#   cg     = 2 = use Interior (barrier) CG algorithm
+#   active = 3 = use Active Set algorithm
+algorithm    1
+
+# Whether feasibility is given special emphasis.
+#   no       = 0 = no emphasis on feasibility
+#   stay     = 1 = iterates must honor inequalities
+#   get      = 2 = emphasize first getting feasible before optimizing
+#   get_stay = 3 = implement both options 1 and 2 above
+bar_feasible 0
+
+# Maximum number of iterations to allow
+# (if 0 then KNITRO determines the best value).
+# Default values are 10000 for NLP and 3000 for MIP.
+maxit 0
+
+
+# How to compute/approximate the gradient of the objective
+# and constraint functions.
+#   exact        = 1 = user supplies exact first derivatives
+#   forward      = 2 = gradients computed by forward finite differences
+#   central      = 3 = gradients computed by central finite differences
+gradopt      2
+
+# How to compute/approximate the Hessian of the Lagrangian.
+#   exact        = 1 = user supplies exact second derivatives
+#   bfgs         = 2 = KNITRO computes a dense quasi-Newton BFGS Hessian
+#   sr1          = 3 = KNITRO computes a dense quasi-Newton SR1 Hessian
+#   finite_diff  = 4 = KNITRO computes Hessian-vector products by finite differences
+#   product      = 5 = user supplies exact Hessian-vector products
+#   lbfgs        = 6 = KNITRO computes a limited-memory quasi-Newton BFGS Hessian
+hessopt     2
+
+
+# Specifies relative stopping tolerance used to declare infeasibility.
+infeastol    1e-8
+
+# Step size tolerance used for terminating the optimization.
+xtol         1e-16
+
+# Specifies the final relative stopping tolerance for the KKT (optimality)
+# error. Smaller values of opttol result in a higher degree of accuracy in
+# the solution with respect to optimality. (default 1e-6)
+opttol       1e-6
+
+# Specifies the verbosity of output.
+#   none         = 0 = nothing
+#   summary      = 1 = only final summary information
+#   iter_10      = 2 = information every 10 iterations is printed
+#   iter         = 3 = information at each iteration is printed
+#   iter_verbose = 4 = more verbose information at each iteration is printed
+#   iter_x       = 5 = in addition, values of solution vector (x) are printed
+#   all          = 6 = in addition, constraints (c) and multipliers (lambda)
+outlev       1

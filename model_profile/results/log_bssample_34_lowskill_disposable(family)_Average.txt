@@ -1,0 +1,60 @@
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = disposable(family)
+education = lowskill
+rhoMale = 0.78
+================================================================
+
+ExitFlag =
+
+        -101
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = disposable(family)
+education = lowskill
+rhoMale = 0.9
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = disposable(family)
+education = lowskill
+rhoMale = 0.98
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = disposable(family)
+education = lowskill
+rhoMale = 0.99
+================================================================
+
+ExitFlag =
+
+        -101
+
+===========================================================

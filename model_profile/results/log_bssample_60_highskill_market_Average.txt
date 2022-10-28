@@ -1,0 +1,120 @@
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.84
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.88
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.9
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.91
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.92
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.94
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.95
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
+===========================================================
+Warning: No Convergence within Maximum Number of Iterations
+================================================================
+Average Cohort Effects
+model = model_profile
+income = market
+education = highskill
+rhoMale = 0.96
+================================================================
+
+ExitFlag =
+
+        -102
+
+===========================================================
